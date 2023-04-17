@@ -43,10 +43,8 @@ const LinkItems: Array<LinkItemProps> = [
 export function SimpleSidebar({ children, setRender }: {
     children: ReactNode, setRender: Dispatch<SetStateAction<{
         account: boolean;
-        subscription: boolean;
-        invokes: boolean;
-        help: boolean;
-        bookmarks: boolean;
+        help: boolean
+        images: boolean;
 
     }>>
 }) {
@@ -84,10 +82,8 @@ interface SidebarProps extends BoxProps {
     onClose: () => void;
     setRender: Dispatch<SetStateAction<{
         account: boolean;
-        subscription: boolean;
-        invokes: boolean;
         help: boolean;
-        bookmarks: boolean;
+        images: boolean;
     }>>
 
 }
@@ -115,49 +111,24 @@ const SidebarContent = ({ onClose, setRender, ...rest }: SidebarProps) => {
                 setRender({
                     account: true,
                     help: false,
-                    invokes: false,
-                    subscription: false,
-                    bookmarks: false
+                    images: false
                 }); onClose()
             }}>Profile</NavItem>
-            <NavItem key={'Subscriptions'} icon={MdSubscriptions} name={'Subscriptions'} onClick={() => {
+            <NavItem key={'Images'} icon={MdSubscriptions} name={'Images'} onClick={() => {
                 setRender({
                     account: false,
                     help: false,
-                    invokes: false,
-                    subscription: true,
-                    bookmarks: false
+                    images: true
                 }); onClose()
-            }}>Subscriptions</NavItem>
-            <NavItem key={'Invokes'} icon={MdOutlinePinInvoke} name={'Invokes'} onClick={() => {
-                setRender({
-                    account: false,
-                    help: false,
-                    invokes: true,
-                    subscription: false,
-                    bookmarks: false
-                }); onClose()
-            }}>Invokes</NavItem>
+            }}>Images</NavItem>
 
             <NavItem key={'Contact'} icon={MdContactSupport} name={'Contact'} onClick={() => {
                 setRender({
                     account: false,
                     help: true,
-                    invokes: false,
-                    subscription: false,
-                    bookmarks: false
+                    images: false
                 }); onClose()
             }}>Contact Support</NavItem>
-
-            <NavItem key={'Bookmarks'} icon={BsBookmark} name={'Bookmarks'} onClick={() => {
-                setRender({
-                    account: false,
-                    help: false,
-                    invokes: false,
-                    subscription: false,
-                    bookmarks: true
-                }); onClose()
-            }}>Bookmarks</NavItem>
 
             <NavItem key={'Sign Out'} icon={FaSignOutAlt} name={'Bookmarks'} onClick={() => {
                 dispatch(logoutAction() as any);

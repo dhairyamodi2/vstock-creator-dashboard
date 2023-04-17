@@ -11,14 +11,13 @@ import { useRouter } from "next/router";
 import { Progress } from "@chakra-ui/react";
 import CustomLoader from "@/components/Common/CustomLoader";
 import { Contact } from "@/components/Account/Contact";
+import { Images } from "@/components/Images/Images";
 
 export default function Account(){
     const [render, setRender] = useState({
         account: false,
-        subscription: false,
-        invokes : false,
         help: false,
-        bookmarks: false,
+        images: false
     });
     const [pageLoader, setLoader] = useState(true);
     const visitedState = useSelector<State, VisitedState>(state => state.visitedState);
@@ -32,10 +31,8 @@ export default function Account(){
         })
         setRender({
             account: true,
-            bookmarks: false,
+            images: false,
             help: false,
-            invokes: false,
-            subscription: false
         })
     }, [])
     useEffect(() => {
@@ -57,6 +54,7 @@ export default function Account(){
             {pageLoader == true ? <CustomLoader />: <SimpleSidebar setRender={setRender}>
                 {render.account && <Profile />}
                 {render.help && <Contact />}
+                {render.images && <Images />}
             </SimpleSidebar>}
         </div>
     )

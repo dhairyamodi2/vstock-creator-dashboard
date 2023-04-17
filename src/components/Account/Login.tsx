@@ -22,7 +22,7 @@ const Login: React.FC<LoginType> = function ({ setUserState, userState }) {
             const obj = {
                 email: result.user.email,
                 uid: result.user.uid,
-                user_type: 'customer'
+                user_type: 'contributor'
             }
             console.log(obj);
             fetch('http://localhost:3001/user/login', {

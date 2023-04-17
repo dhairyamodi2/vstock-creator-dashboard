@@ -16,7 +16,7 @@ const CustomerProfile : React.FC<UserState>= function({email, id, type}){
             email,
             name : signUpState.name,
             uid : id,
-            user_type : 'customer',
+            user_type : 'contributor',
             industry : signUpState.industry,
             bank_ac_number : signUpState.bank_ac_number,
             IFS_code : signUpState.IFS_code
@@ -52,7 +52,7 @@ const CustomerProfile : React.FC<UserState>= function({email, id, type}){
             <input type={'text'} name="name" placeholder="Your Name" onChange={handleChange} required/>
             <input type={'text'} name="industry" placeholder="Industry" onChange={handleChange}/>
             <input type={'text'} name="bank_ac_number" placeholder="Bank Account Number" onChange={handleChange}/>
-            <input type={'text'} name="IFS_Code" placeholder="IFS Code" onChange={handleChange}/>
+            <input type={'text'} name="IFS_code" placeholder="IFS Code" onChange={handleChange}/>
             <Button
                 size={'md'}
                 marginTop={6}
