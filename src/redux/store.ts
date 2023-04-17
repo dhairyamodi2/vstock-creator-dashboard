@@ -3,10 +3,12 @@ import {createStore, applyMiddleware, combineReducers, compose, bindActionCreato
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { authReducer, visitReducer } from './User/user.reducer';
+import { myImageReducers } from './Images/images.reducers';
 
 const reducers = combineReducers({
     visitedState : visitReducer,
-    authState : authReducer
+    authState : authReducer,
+    images : myImageReducers
 }
 )
 const initialState = {
