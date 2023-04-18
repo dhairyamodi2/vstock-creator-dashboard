@@ -18,7 +18,7 @@ export const ImageInfo : React.FC<ImageInfoProps>= function ({stock}) {
         <div className="img-info-card">
             <Badge colorScheme={stock.verdict == 'approved' ? 'green' : stock.verdict == 'pending' ? 'orange' : 'red'} alignSelf={'flex-end'} padding={'5px'} fontSize={'medium'} fontWeight={'bold'}>{stock.verdict}</Badge>
             <div className="img-info">
-                <ImageCard private_url={stock.private_url}/>
+                <ImageCard private_url={stock.public_url}/>
                 <div className="img-details">
                     <span><b>ID: </b>{stock.id}</span>
                     <span><b>NAME: </b>{stock.image_name}</span>
