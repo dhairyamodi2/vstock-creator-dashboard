@@ -115,3 +115,13 @@
 .img-details > span {
     margin-top: 20px;
 }
+
+.cat-actions {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    width: 60%;
+}
+.cat-actions > * {
+    margin-top: 5px;
+}
