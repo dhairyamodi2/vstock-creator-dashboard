@@ -1,3 +1,5 @@
+import { User } from "../User/user.types";
+
 export interface Category{
     category_name : string;
     category_verdict : string;
@@ -6,6 +8,7 @@ export interface Category{
 
 export interface Album {
     album_name : string;
+    user : User
 }
 
 export interface Images {

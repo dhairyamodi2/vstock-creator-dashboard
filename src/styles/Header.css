@@ -34,7 +34,7 @@
     letter-spacing: 2px;
 }
 
-input[type='text'], textarea {
+input[type='text'], textarea, select, input[type='file'] {
     font-family: "Ubuntu";
     font-style: normal;
     font-size: 20px;

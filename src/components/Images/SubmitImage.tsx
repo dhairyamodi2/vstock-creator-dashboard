@@ -1,8 +1,9 @@
+import { OverlayProps } from "@/types/overlay";
 import { Button } from "@chakra-ui/react"
 import { useEffect } from "react"
 import { FaArrowAltCircleDown } from "react-icons/fa"
 
-export const SubmitImageCard = function () {
+export const SubmitImageCard : React.FC<OverlayProps> = function ({onClose, onOpen, isOpen}) {
 
     useEffect(() => {
 
@@ -13,6 +14,7 @@ export const SubmitImageCard = function () {
             color={'white'}
             transition={'0.8s'}
             marginTop={'25px'}
+            onClick={onOpen}
             _hover={{ bgColor: 'black', color: 'white', transform: 'scale(1.03)' }}>Submit Image</Button>
         <div className="steps">
             <span>Submit an Image, add categories</span>
