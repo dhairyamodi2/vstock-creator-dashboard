@@ -42,7 +42,7 @@ const Profile = function () {
 
     const handleClick = async function () {
         try {
-            const data = await fetch('http://localhost:3001/user/profile', {
+            const data = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URI}user/profile`, {
                 method: 'PUT',
                 headers: {
                     'Content-type': 'application/json',

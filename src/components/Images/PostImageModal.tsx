@@ -12,7 +12,7 @@ export const PostImageModal: React.FC<OverlayProps> = function ({ isOpen, onOpen
     const [loader, setLoader] = useState(false);
     useEffect(() => {
         async function getMyAlbums() {
-            const data = await fetch('http://localhost:3001/albums/all', {
+            const data = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URI}albums/all`, {
                 method: 'GET',
                 headers: {
                     Authorization: 'Bearer ' + localStorage.getItem('token')
@@ -93,7 +93,7 @@ export const PostImageModal: React.FC<OverlayProps> = function ({ isOpen, onOpen
         data.append('album', JSON.stringify(image.album));
         setLoader(true);
         try {
-            const response = await fetch('http://localhost:3001/stock/upload', {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URI}stock/upload`, {
                 method: "POST",
                 headers: {
                     // 'Content-type' : "application/json",

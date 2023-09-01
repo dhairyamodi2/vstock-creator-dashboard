@@ -10,7 +10,7 @@ export const getMyImages = function (){
                 type: my_images_req,
                 payload: {success: false, loading: true, message: "loading", stock: []}
             })
-            const data = await fetch('http://localhost:3001/stock/creator/all', {
+            const data = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URI}stock/creator/all`, {
                 method: 'GET',
                 headers: {
                     Authorization : 'Bearer ' + localStorage.getItem('token')

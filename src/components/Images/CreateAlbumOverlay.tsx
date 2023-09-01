@@ -11,7 +11,7 @@ export const CreateAlbumOverlay: React.FC<AlbumOverlay> = function ({ albumOnClo
     const [album_name, setAlbum] = useState<string | undefined>()
     async function createAlbums() {
         alert(album_name)
-        const data = await fetch('http://localhost:3001/albums/create', {
+        const data = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URI}albums/create`, {
             method: 'POST',
             headers: {
                 'Content-type' : 'application/json',

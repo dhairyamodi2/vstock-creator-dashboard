@@ -50,7 +50,7 @@ export const getMe = function(){
                 payload : null
             })
 
-            const data = await fetch('http://localhost:3001/user/me', {
+            const data = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URI}user/me`, {
                 method: 'GET',
                 headers: {
                     'Authorization' : 'Bearer ' + cred

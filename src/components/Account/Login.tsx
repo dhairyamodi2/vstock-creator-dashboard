@@ -25,7 +25,7 @@ const Login: React.FC<LoginType> = function ({ setUserState, userState }) {
                 user_type: 'contributor'
             }
             console.log(obj);
-            fetch('http://localhost:3001/user/login', {
+            fetch(`${process.env.NEXT_PUBLIC_SERVER_URI}user/login`, {
                 method: 'POST',
                 body: JSON.stringify(obj),
                 headers: {

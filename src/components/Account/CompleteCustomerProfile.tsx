@@ -22,7 +22,7 @@ const CustomerProfile : React.FC<UserState>= function({email, id, type}){
             IFS_code : signUpState.IFS_code
         }
         console.log(obj);
-        fetch('http://localhost:3001/user/register', {
+        fetch(`${process.env.NEXT_PUBLIC_SERVER_URI}user/register`, {
             method: 'POST',
             body: JSON.stringify(obj),
             headers: {

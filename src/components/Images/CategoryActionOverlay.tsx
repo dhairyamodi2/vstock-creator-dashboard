@@ -17,7 +17,7 @@ export const CategoryActionOverlay: React.FC<CategoriesOverlay> = function ({ is
 
         async function getCategories() {
             try {
-                const data = await fetch('http://localhost:3001/categories/all');
+                const data = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URI}categories/all`);
                 const res = await data.json();
                 if (res.success == true) {
                     setCategories(res.data as Array<Category>)
@@ -39,7 +39,7 @@ export const CategoryActionOverlay: React.FC<CategoriesOverlay> = function ({ is
             return;
         }
         alert(JSON.stringify({ id, category_name: choosenCategory.category_name, verdict: 'approved' }));
-        const data = await fetch('http://localhost:3001/stock/categories', {
+        const data = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URI}stock/categories`, {
             method: type == 'add' ? 'PUT' : 'DELETE',
             headers: {
                 'Content-type': 'application/json',
