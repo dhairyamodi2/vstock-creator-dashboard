@@ -38,7 +38,7 @@ export const CategoryActionOverlay: React.FC<CategoriesOverlay> = function ({ is
             alert("Please select category");
             return;
         }
-        alert(JSON.stringify({ id, category_name: choosenCategory.category_name, verdict: 'approved' }));
+        // alert(JSON.stringify({ id, category_name: choosenCategory.category_name, verdict: 'approved' }));
         const data = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URI}stock/categories`, {
             method: type == 'add' ? 'PUT' : 'DELETE',
             headers: {

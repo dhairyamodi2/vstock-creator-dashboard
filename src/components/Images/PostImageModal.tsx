@@ -70,7 +70,7 @@ export const PostImageModal: React.FC<OverlayProps> = function ({ isOpen, onOpen
                 file: e.target.files && e.target.files[0] ? e.target.files[0] : null
             }
         })
-        alert(JSON.stringify(image));
+        // alert(JSON.stringify(image));
     }
 
     async function submitImage(){
@@ -109,9 +109,11 @@ export const PostImageModal: React.FC<OverlayProps> = function ({ isOpen, onOpen
                 albumProps.onClose();
             }
             else {
+                console.log(res);
                 alert(res.message)
             }
         } catch (error) {
+            console.log(error);
             setLoader(false);
             alert(error);
         }
